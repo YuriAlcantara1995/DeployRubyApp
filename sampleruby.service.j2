@@ -1,0 +1,11 @@
+[Unit]
+Description=Simple service to run ruby script
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/vagrant/sampleruby.sh
+PIDFile=/var/run/sampleruby
+
+[Install]
+WantedBy=default.target

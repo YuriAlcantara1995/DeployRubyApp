@@ -13,4 +13,17 @@
     - name: install sinatra
       become: yes
       command: gem install sinatra -v1.4.8
+    
+    - name: create simple service template
+      become: true
+      template:
+        src: sampleruby.service.j2
+        dest: /etc/systemd/system/sampleruby.service
+
+    - name: run sampleruby service
+      become: true
+      ansible.builtin.systemd:
+        state: restarted
+        name: sampleruby
+        enabled: yes
 
