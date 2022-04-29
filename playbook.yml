@@ -6,6 +6,12 @@
         dest: /home/vagrant/main.rb
         mode: "0777"
 
+    - name: copy artifact
+      ansible.builtin.copy:
+        src: sampleruby.sh
+        dest: /home/vagrant/sampleruby.sh
+        mode: "0777"
+
     - name: install ruby
       become: yes
       command: sudo yum install -y ruby.x86_64
