@@ -8,8 +8,8 @@
 
     - name: copy artifact
       ansible.builtin.copy:
-        src: sampleruby.sh
-        dest: /home/vagrant/sampleruby.sh
+        src: sampleruby
+        dest: /home/vagrant/sampleruby
         mode: "0777"
 
     - name: install ruby
